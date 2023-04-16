@@ -1,7 +1,7 @@
 import { router } from "./routes/index.js";
-import express from "express";
+import express, { Express } from "express";
 
-const app = express();
+const app: Express = express();
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());

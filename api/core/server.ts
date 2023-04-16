@@ -1,11 +1,13 @@
-import { app } from "./source/app.js";
+import { app } from "./source/app";
 
 class DefaultPort {
-  constructor(value) {
+  value: string;
+
+  constructor(value: string) {
     this.value = value;
   }
 
-  verifyPort() {
+  verifyPort(): boolean | number | string {
     const port = parseInt(this.value, 10);
 
     if (isNaN(port)) {
@@ -18,9 +20,9 @@ class DefaultPort {
   }
 }
 
-const PORT = new DefaultPort(process.env.PORT || 3000);
+const PORT = new DefaultPort(process.env.PORT || "3000");
 
-app.listen(PORT.verifyPort(), (err) => {
+app.listen(PORT.verifyPort() as number, (err?: Error) => {
   if (err) console.log(err);
   console.log(`App listening on port ${PORT.verifyPort()}`);
 });

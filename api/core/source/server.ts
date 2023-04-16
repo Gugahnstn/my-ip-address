@@ -1,4 +1,4 @@
-import { app } from "./source/app";
+import { app } from "./app";
 
 class DefaultPort {
   value: string;

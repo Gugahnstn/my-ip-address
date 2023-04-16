@@ -22,7 +22,9 @@ class DefaultPort {
 
 const PORT = new DefaultPort(process.env.PORT || "3000");
 
-app.listen(PORT.verifyPort() as number, (err?: Error) => {
-  if (err) console.log(err);
-  console.log(`App listening on port ${PORT.verifyPort()}`);
-});
+if(!module.parent) {
+  app.listen(PORT.verifyPort() as number, (err?: Error) => {
+    if (err) console.log(err);
+    console.log(`App listening on port ${PORT.verifyPort()}`);
+  });
+}

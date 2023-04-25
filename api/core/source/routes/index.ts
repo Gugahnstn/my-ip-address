@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const router = Router();
 const corsOptions = {
-  origin: 'https://www.ipcats.bohr.io',
+  origin: 'https://ipcats.bohr.io/',
   optionsSuccessStatus: 200
 }
 
